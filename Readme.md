@@ -46,8 +46,4 @@ Technologies that I've been learning and I've picked up along my programming jou
 
 ## GitHub Stats
 
-![Maulik's GitHub Stats](https://github-readme-stats.vercel.app/api?username=MakSinroja&theme=merko&count_private=true&show_icons=true&include_all_commits=true&hide_border=true)
-
 ![Maulik's GitHub Streak](https://nirzak-streak-stats.vercel.app?user=MakSinroja&theme=merko&hide_border=true)
-
-![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=MakSinroja&layout=compact&theme=merko&hide_border=true)
