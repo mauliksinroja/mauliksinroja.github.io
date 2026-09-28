@@ -1,26 +1,29 @@
 [
   {
-    "title": "Your Flutter Developer Is Using AI. Here's What That Means for Your Project",
+    "title": "Your Flutter Developer Is Using AI. Here's What That Means for Your Project.",
     "url": "https://www.linkedin.com/pulse/your-flutter-developer-using-ai-heres-what-means-project-sinroja-is87f",
+    "image": "https://media.licdn.com/dms/image/v2/D4D12AQFFL4mGDgQPmw/article-cover_image-shrink_720_1280/B4DZ.3LqJqGwAQ-/0/1785484717447?e=2147483647&v=beta&t=2YpvYMWKS_vcnPc_hhI0J866gak4TjNCnTK3BXlEKds",
     "source": "LinkedIn",
     "audience": "For clients",
-    "summary": "What AI-assisted development means for the app you are paying for, and what a developer should still own personally.",
+    "summary": "How AI changed discovery, architecture and production — and what it actually means for your mobile product.",
     "color": "#1f3b63"
   },
   {
-    "title": "Flutter Is No Longer a Mobile Framework",
+    "title": "Flutter Is No Longer a Mobile Framework - What That Means for Your Product Strategy in 2026",
     "url": "https://www.linkedin.com/pulse/flutter-longer-mobile-framework-what-means-your-product-sinroja-1w2vf",
+    "image": "https://media.licdn.com/dms/image/v2/D4D12AQE_Da4sgTEmbw/article-cover_image-shrink_720_1280/B4DZ_lkTfkKkAQ-/0/1786262932841?e=2147483647&v=beta&t=Grl9WcrjfEEIEHP8rhxrFBTiO1WWkbc5Ydjp1z0DtYA",
     "source": "LinkedIn",
     "audience": "For founders & product managers",
-    "summary": "Flutter's expansion beyond phones, and what it changes when you plan a product.",
+    "summary": "Flutter now targets six platforms from one codebase. What that means for your product strategy, budget and team.",
     "color": "#25564a"
   },
   {
-    "title": "The Honest Guide to Going Freelance as a Flutter Developer",
+    "title": "The Honest Guide to Going Freelance as a Flutter Developer - What Took Me 9 Years to Learn",
     "url": "https://www.linkedin.com/pulse/honest-guide-going-freelance-flutter-developer-what-maulik-sinroja-j04ne/",
+    "image": "https://media.licdn.com/dms/image/v2/D4E12AQF7QDzDR-NADA/article-cover_image-shrink_720_1280/B4EaAyK.1TJQAQ-/0/1787548134961?e=2147483647&v=beta&t=JcrV2Tq-83TlGq5x5ZSx9lIHNGVwWADv0LyaD5iy6es",
     "source": "LinkedIn",
     "audience": "For Flutter developers",
-    "summary": "For developers weighing the move from a salaried role to freelance work.",
+    "summary": "The real story of going freelance — two rejections, one connection, and what actually builds a sustainable client base.",
     "color": "#6b2f52"
   }
 ]

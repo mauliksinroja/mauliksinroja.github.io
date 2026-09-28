@@ -451,3 +451,10 @@ a.count:hover { color: var(--text-base); text-decoration: underline; text-underl
 }
 @media (min-width: 768px) { .article-body { display: contents; } }
 @media (min-width: 768px) { .article-body > .overline { display: none; } }
+
+.article-art { position: relative; overflow: hidden; }
+.article-cover { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity .2s ease; }
+.article-art.has-cover .article-cover { opacity: 1; }
+.article-art.has-cover > :not(.article-cover) { visibility: hidden; }
+@media (max-width: 767px) { .article-art { aspect-ratio: 16 / 9; width: 132px; align-self: flex-start; } }
+@media (min-width: 768px) { .article-body > .overline { display: block; } }

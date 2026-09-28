@@ -54,6 +54,16 @@
           art.appendChild(el('span', 'overline', (a.source || 'Article') + ' · Article'));
           art.insertAdjacentHTML('beforeend', '<svg width="28" height="28"><use href="#i-pen"/></svg>');
           art.appendChild(el('strong', '', a.audience || ''));
+          if (/^https:\/\//.test(a.image || '') || /^[\w\/.-]+\.(jpe?g|png|webp)$/i.test(a.image || '')) {
+            var img = el('img', 'article-cover');
+            img.alt = ''; img.loading = 'lazy'; img.decoding = 'async';
+            img.referrerPolicy = 'no-referrer';
+            img.width = 1280; img.height = 720;
+            img.onload = function () { art.classList.add('has-cover'); };
+            img.onerror = function () { img.remove(); };
+            img.src = a.image;
+            art.appendChild(img);
+          }
           var body = el('div', 'article-body');
           body.appendChild(el('span', 'overline', a.audience || ''));
           body.appendChild(el('h3', '', a.title));
