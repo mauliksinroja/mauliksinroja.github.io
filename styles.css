@@ -143,7 +143,8 @@ button { font: inherit; color: inherit; }
   background: var(--bg-base); font-size: 12px; font-weight: 700; white-space: nowrap;
 }
 @media (min-width: 896px) { .status-pill { font-size: 14px; padding: 8px 16px; } }
-.dot { width: 8px; height: 8px; border-radius: 50%; background: var(--status, var(--accent)); flex-shrink: 0; }
+.dot { width: 8px; height: 8px; border-radius: 50%; background: var(--status, var(--text-warning)); flex-shrink: 0; }
+.live-badge .dot { --status: var(--accent); }
 
 /* ---------- Hero ---------- */
 .hero {
@@ -297,13 +298,14 @@ button { font: inherit; color: inherit; }
 .jobs { display: flex; flex-direction: column; gap: 4px; }
 .job { display: grid; grid-template-columns: minmax(0, 1fr); gap: 2px; padding: 10px 0; box-shadow: inset 0 -1px 0 var(--hairline); }
 .job-n { display: none; }
-.job strong { font-size: 16px; color: var(--text-base); }
-.job > span > span { font-size: 14px; color: var(--text-subdued); }
+.job strong { display: block; font-size: 16px; color: var(--text-base); }
+.job > span > span { display: block; font-size: 14px; color: var(--text-subdued); }
+.job > span > .job-desc { margin-top: 6px; line-height: 1.5; color: var(--text-bright-subdued); max-width: 640px; }
 .job time { font-size: 12px; font-weight: 700; color: var(--text-subdued); text-transform: uppercase; }
 @media (min-width: 768px) {
-  .job { grid-template-columns: 40px minmax(0, 1fr) 120px; gap: 16px; align-items: center; padding: 12px 16px; box-shadow: none; border-radius: var(--radius-md); }
+  .job { grid-template-columns: 40px minmax(0, 1fr) 110px; gap: 16px; align-items: start; padding: 12px 16px; box-shadow: none; border-radius: var(--radius-md); }
   .job:hover { background: var(--bg-card); }
-  .job-n { display: block; font-size: 16px; color: var(--text-subdued); }
+  .job-n { display: block; font-size: 16px; color: var(--text-subdued); padding-top: 1px; }
   .job time { font-size: 14px; font-weight: 400; text-align: right; text-transform: none; }
 }
 .award { display: flex; align-items: center; gap: 12px; padding: 12px 16px; background: var(--bg-interactive); border-radius: var(--radius-lg); }
@@ -380,3 +382,30 @@ button { font: inherit; color: inherit; }
   .player-cta-mobile { display: none; }
 }
 @media (max-width: 895px) { .player-left { display: contents; } .player-text .overline { display: none; } }
+
+/* ---------- App icons, status, store links ---------- */
+.art { position: relative; }
+.art .app-icon {
+  width: 46%; height: auto; aspect-ratio: 1 / 1; border-radius: 22%;
+  box-shadow: var(--shadow-dialog); background: var(--bg-card-alt); object-fit: cover;
+}
+.art .app-icon + b { display: none; }
+.art-sm { overflow: hidden; }
+.art-sm-img { width: 100%; height: 100%; object-fit: cover; }
+.art-sm-img + b { display: none; }
+.art-sm b { font-weight: 800; }
+
+.card { justify-content: flex-start; }
+.card p { flex-grow: 1; }
+.card-foot { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; padding-top: 2px; }
+.live-badge, .off-badge { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 700; }
+.off-badge { color: var(--text-subdued); font-weight: 400; }
+.stores { display: flex; gap: 6px; }
+.store {
+  display: inline-flex; align-items: center; gap: 5px; min-height: 32px;
+  padding: 6px 10px; border-radius: var(--radius-full);
+  background: var(--bg-chip); font-size: 12px; font-weight: 700; color: var(--text-base);
+}
+.store:hover { background: #3a3a3a; }
+.track-stores { display: none; gap: 6px; }
+@media (min-width: 768px) { .track-col.track-stores { display: flex; } }

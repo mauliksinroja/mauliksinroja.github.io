@@ -9,7 +9,7 @@
       chips.forEach(function (c) { c.setAttribute('aria-pressed', String(c === chip)); });
       var shown = 0;
       cards.forEach(function (card) {
-        var match = f === 'all' || card.getAttribute('data-group') === f;
+        var match = f === 'all' || (f === 'live' ? card.getAttribute('data-live') === 'yes' : card.getAttribute('data-group') === f);
         card.hidden = !match;
         if (match) shown++;
       });
