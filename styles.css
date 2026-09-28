@@ -315,7 +315,7 @@ button { font: inherit; color: inherit; }
 
 .stack-group { display: flex; flex-direction: column; gap: 8px; }
 .tags { display: flex; flex-wrap: wrap; gap: 8px; }
-.tags li { padding: 6px 14px; border-radius: var(--radius-full); background: var(--bg-interactive); font-size: 14px; }
+.tags li { padding: 7px 14px 7px 12px; border-radius: var(--radius-full); background: var(--bg-interactive); font-size: 14px; }
 
 /* Contact */
 .contact {
@@ -426,7 +426,8 @@ button { font: inherit; color: inherit; }
   .ai-tool strong { font-size: 14px; }
 }
 .tag-icon { display: inline-flex; align-items: center; gap: 8px; }
-.tag-icon svg { color: var(--text-base); }
+.tag-icon svg { color: var(--text-bright-subdued); flex-shrink: 0; }
+.tag-icon img { flex-shrink: 0; }
 
 /* ---------- Writing ---------- */
 a.count:hover { color: var(--text-base); text-decoration: underline; text-underline-offset: 3px; }
