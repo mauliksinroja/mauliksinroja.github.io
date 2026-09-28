@@ -1,4 +1,22 @@
 (function () {
+  // Loading screen: hold at least 0.7s so the animation reads, hand off as soon as the page has loaded (CSS caps it at 1.2s)
+  var root = document.documentElement;
+  if (root.classList.contains('show-loader')) {
+    var now = function () { return (window.performance && performance.now) ? performance.now() : 0; };
+    var removeLoader = function () { var l = document.getElementById('loader'); if (l) l.remove(); };
+    var shownAt = window.__loaderStart || 0;
+    var finish = function () {
+      var t = now() - shownAt;
+      if (t >= 1150) { removeLoader(); return; } // the CSS fade has already run
+      setTimeout(function () {
+        root.classList.add('loader-done');
+        setTimeout(removeLoader, 350);
+      }, Math.max(0, 750 - t));
+    };
+    if (document.readyState === 'complete') finish(); else window.addEventListener('load', finish);
+    setTimeout(removeLoader, Math.max(0, 1600 - (now() - shownAt))); // hard stop
+  }
+
   // Project filter
   var chips = document.querySelectorAll('.chip');
   var cards = document.querySelectorAll('#projects .card');

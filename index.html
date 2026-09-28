@@ -24,6 +24,21 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;700;800&amp;display=swap">
 <link rel="stylesheet" href="styles.css">
+<link rel="preload" as="image" href="assets/maulik-sinroja.jpg">
+<script>
+  /* Loading screen: first visit per session only, never for reduced-motion users. */
+  (function () {
+    try {
+      var seen = sessionStorage.getItem('ms-loader-seen');
+      var still = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (!seen && !still) {
+        document.documentElement.classList.add('show-loader');
+        window.__loaderStart = (window.performance && performance.now) ? performance.now() : 0;
+        sessionStorage.setItem('ms-loader-seen', '1');
+      }
+    } catch (e) { /* storage blocked: skip the loader */ }
+  })();
+</script>
 
 <script type="application/ld+json">
 {
@@ -46,6 +61,13 @@
 </script>
 </head>
 <body>
+<div class="loader" id="loader" aria-hidden="true">
+  <div class="loader-inner">
+    <div class="loader-photo"><img src="assets/maulik-sinroja.jpg" alt="" width="480" height="480" decoding="async"></div>
+    <div class="loader-eq"><span></span><span></span><span></span><span></span><span></span></div>
+    <div class="loader-name"><strong>Maulik Sinroja</strong><span>Now playing</span></div>
+  </div>
+</div>
 <a class="skip-link" href="#content">Skip to content</a>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
