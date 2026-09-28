@@ -59,6 +59,9 @@
   <symbol id="i-github" viewBox="0 0 24 24"><path d="M9 19c-4.5 1.4-4.5-2.3-6.3-2.8M15 21.5v-3.4a3 3 0 0 0-.8-2.3c2.8-.3 5.8-1.4 5.8-6.2a4.8 4.8 0 0 0-1.3-3.3 4.5 4.5 0 0 0-.1-3.3s-1-.3-3.4 1.3a11.7 11.7 0 0 0-6.2 0C6.6 2.7 5.6 3 5.6 3a4.5 4.5 0 0 0-.1 3.3 4.8 4.8 0 0 0-1.3 3.3c0 4.8 3 5.9 5.8 6.2a3 3 0 0 0-.8 2.3v3.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
   <symbol id="i-play" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M5 3.5v17l14-8.5z"/></g></symbol>
   <symbol id="i-phone" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2"><rect x="6" y="2.5" width="12" height="19" rx="2.5"/><path d="M11 18.5h2" stroke-linecap="round"/></g></symbol>
+  <symbol id="i-code" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="4" width="19" height="16" rx="3"/><path d="m7 10 3 2.5L7 15M12.5 15H17"/></g></symbol>
+  <symbol id="i-pen" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><path d="M4 20h4L19 9a2.8 2.8 0 0 0-4-4L4 16z"/><path d="m13.5 6.5 4 4"/></g></symbol>
+  <symbol id="i-external" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
   <symbol id="i-star" viewBox="0 0 24 24"><path d="m12 3 2.6 5.5 6 .8-4.4 4.1 1.1 6L12 16.5l-5.3 2.9 1.1-6L3.4 9.3l6-.8z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
 </svg>
 
@@ -71,6 +74,7 @@
       <a class="nav-link" href="#top" data-section="top"><svg width="24" height="24"><use href="#i-home"/></svg>Home</a>
       <a class="nav-link" href="#work" data-section="work"><svg width="24" height="24"><use href="#i-grid"/></svg>Work</a>
       <a class="nav-link" href="#approach" data-section="approach"><svg width="24" height="24"><use href="#i-bulb"/></svg>How I build</a>
+      <a class="nav-link" href="#writing" data-section="writing"><svg width="24" height="24"><use href="#i-pen"/></svg>Writing</a>
       <a class="nav-link" href="#experience" data-section="experience"><svg width="24" height="24"><use href="#i-case"/></svg>Experience</a>
       <a class="nav-link" href="#stack" data-section="stack"><svg width="24" height="24"><use href="#i-layers"/></svg>Stack</a>
       <a class="nav-link" href="#contact" data-section="contact"><svg width="24" height="24"><use href="#i-mail"/></svg>Contact</a>
@@ -101,6 +105,7 @@
       <nav aria-label="Sections">
         <a class="tab" href="#work" data-section="work">Work</a>
         <a class="tab" href="#approach" data-section="approach">How I build</a>
+        <a class="tab" href="#writing" data-section="writing">Writing</a>
         <a class="tab" href="#experience" data-section="experience">Experience</a>
         <a class="tab" href="#stack" data-section="stack">Stack</a>
       </nav>
@@ -191,6 +196,24 @@
           <p>Production apps ship with Shorebird code push, so a critical bug gets patched without waiting on a store review cycle.</p>
         </article>
       </div>
+      <div class="ai-strip">
+        <h3 id="ai-h" class="overline">AI in my daily workflow</h3>
+        <ul class="ai-tools">
+          <li class="ai-tool"><span class="ai-icon"><img src="assets/icons/claude.svg" alt="" width="28" height="28"></span><span><strong>Claude</strong><span>Anthropic</span></span></li>
+          <li class="ai-tool"><span class="ai-icon"><svg width="28" height="28" aria-hidden="true"><use href="#i-code"/></svg></span><span><strong>Codex</strong><span>OpenAI</span></span></li>
+          <li class="ai-tool"><span class="ai-icon"><img src="assets/icons/gemini.svg" alt="" width="28" height="28"></span><span><strong>Gemini</strong><span>Google</span></span></li>
+        </ul>
+        <p>Used for architecture review, code quality checks and boilerplate. Every line is reviewed by me before it ships.</p>
+      </div>
+    </section>
+
+    <section class="section" id="writing" aria-labelledby="writing-h">
+      <div class="section-head">
+        <h2 id="writing-h">Writing</h2>
+        <a class="count" href="https://www.linkedin.com/in/mauliksinroja/recent-activity/articles/" rel="noopener" target="_blank">All articles on LinkedIn</a>
+      </div>
+      <ul class="articles" id="articles" aria-live="polite"></ul>
+      <noscript><p class="store-note">Read my articles on <a href="https://www.linkedin.com/in/mauliksinroja/recent-activity/articles/">LinkedIn</a>.</p></noscript>
     </section>
 
     <div class="split">
@@ -213,6 +236,7 @@
         <div class="stack-group"><h3 class="overline">Languages &amp; frameworks</h3><ul class="tags"><li>Flutter</li><li>Dart</li><li>Kotlin</li><li>Java</li><li>Swift (learning)</li></ul></div>
         <div class="stack-group"><h3 class="overline">Architecture</h3><ul class="tags"><li>BLoC</li><li>MVVM</li><li>MVP</li><li>Jetpack</li></ul></div>
         <div class="stack-group"><h3 class="overline">Backend &amp; data</h3><ul class="tags"><li>Firebase</li><li>REST</li><li>GraphQL</li><li>SQLite</li><li>PostgreSQL</li><li>Cloud Firestore</li></ul></div>
+        <div class="stack-group"><h3 class="overline">AI tools</h3><ul class="tags"><li class="tag-icon"><img src="assets/icons/claude.svg" alt="" width="14" height="14">Claude</li><li class="tag-icon"><svg width="14" height="14" aria-hidden="true"><use href="#i-code"/></svg>Codex</li><li class="tag-icon"><img src="assets/icons/gemini.svg" alt="" width="14" height="14">Gemini</li></ul></div>
         <div class="stack-group"><h3 class="overline">Ship &amp; operate</h3><ul class="tags"><li>Shorebird</li><li>CI/CD</li><li>Jenkins</li><li>Git</li><li>App Store</li><li>Google Play</li></ul></div>
       </section>
     </div>
