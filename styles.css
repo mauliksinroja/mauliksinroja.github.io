@@ -505,3 +505,12 @@ html.show-loader.loader-done .loader { animation: loader-out-early .3s ease forw
   .actions-row .icon-btn { width: 44px; height: 44px; }
   .actions-row .btn-outline { padding: 13px 16px; letter-spacing: 1px; min-width: 0; }
 }
+
+/* ---------- Certifications & honours ---------- */
+.certs { display: flex; flex-direction: column; gap: 10px; margin-top: 8px; }
+.cert-list { display: grid; grid-template-columns: 1fr; gap: 8px; }
+@media (min-width: 768px) and (max-width: 1023px) { .cert-list { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.cert-list .award { align-items: center; }
+.cert-list .award > span:nth-child(2) { flex: 1; min-width: 0; }
+.cert .award-icon { color: var(--text-bright-subdued); }
+.cert-list .store { flex-shrink: 0; }
