@@ -498,3 +498,10 @@ html.show-loader.loader-done .loader { animation: loader-out-early .3s ease forw
 .loader-name strong { font-size: 16px; font-weight: 700; }
 .loader-name span { font-size: 12px; font-weight: 700; letter-spacing: 1.4px; text-transform: uppercase; color: var(--text-subdued); }
 @keyframes loader-rise { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+
+/* Action row: five buttons on small phones */
+@media (max-width: 575px) {
+  .actions-row { gap: 8px; flex-wrap: wrap; justify-content: center; }
+  .actions-row .icon-btn { width: 44px; height: 44px; }
+  .actions-row .btn-outline { padding: 13px 16px; letter-spacing: 1px; min-width: 0; }
+}
