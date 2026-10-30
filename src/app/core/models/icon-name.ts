@@ -22,4 +22,6 @@ export type IconName =
   | 'arch-layers'
   | 'api'
   | 'patch'
-  | 'cicd';
+  | 'cicd'
+  | 'googleplay'
+  | 'gmail';
