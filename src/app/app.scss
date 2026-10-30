@@ -1,0 +1,24 @@
+@use 'breakpoints' as bp;
+
+.shell {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+  padding: 0 0 calc(var(--player-h) + 64px);
+  min-height: 100vh;
+
+  @include bp.from(bp.$desktop-sm) {
+    grid-template-columns: var(--sidebar-w) minmax(0, 1fr);
+    padding: 8px 8px calc(var(--player-h) + 8px);
+  }
+}
+
+.main {
+  background: var(--bg-surface);
+  min-width: 0;
+  overflow: hidden;
+
+  @include bp.from(bp.$desktop-sm) {
+    border-radius: var(--radius-lg);
+  }
+}

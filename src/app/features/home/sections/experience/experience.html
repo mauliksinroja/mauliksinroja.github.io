@@ -1,0 +1,43 @@
+<h2 id="exp-h">Experience</h2>
+
+<ol class="jobs">
+  @for (job of jobs; track job.role; let i = $index) {
+    <li class="job">
+      <span class="n">{{ i + 1 }}</span>
+      <span>
+        <strong>{{ job.role }}</strong>
+        <span class="org">{{ job.organisation }}</span>
+        <span class="desc">{{ job.description }}</span>
+      </span>
+      <time>{{ job.period }}</time>
+    </li>
+  }
+</ol>
+
+<div class="certs">
+  <h3 id="certs-h" class="overline">Certifications &amp; honours</h3>
+  <ul class="cert-list" aria-labelledby="certs-h">
+    @for (cert of certifications; track cert.title) {
+      <li class="cert" [class.is-award]="cert.kind === 'award'">
+        <span class="cert-icon" aria-hidden="true"
+          ><app-icon [name]="cert.icon" [size]="cert.iconSize"
+        /></span>
+        <span class="cert-text">
+          <strong>{{ cert.title }}</strong>
+          <span>{{ cert.issuer }}</span>
+        </span>
+        @if (cert.url) {
+          <a
+            class="store"
+            [href]="cert.url"
+            target="_blank"
+            rel="noopener"
+            [attr.aria-label]="cert.title + ' certificate on ' + cert.issuer"
+          >
+            <app-icon name="external" [size]="12" />View
+          </a>
+        }
+      </li>
+    }
+  </ul>
+</div>

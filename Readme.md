@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="./assets/knowledge_is_power_image.png" height="300" />
+    <img src="./docs/images/knowledge_is_power_image.png" height="300" />
 </p>
 
 ## Hi Gitians! 👋 I'm Maulik Sinroja ![](https://komarev.com/ghpvc/?username=MakSinroja&label=Profile+Views&abbreviated=true)
@@ -47,3 +47,55 @@ Technologies that I've been learning and I've picked up along my programming jou
 ## GitHub Stats
 
 ![Maulik's GitHub Streak](https://nirzak-streak-stats.vercel.app?user=MakSinroja&theme=merko&hide_border=true)
+
+---
+
+## About this repository
+
+This repo is the source of [mauliksinroja.github.io](https://mauliksinroja.github.io/), built with **Angular 22**. Every push to `master` builds the site, prerenders it to static HTML and publishes it to GitHub Pages through GitHub Actions (`.github/workflows/deploy.yml`).
+
+### Run it locally
+
+```bash
+npm ci
+npm start                              # dev server at http://localhost:4200
+npm test -- --watch=false              # unit tests
+npm run build                          # production build in dist/portfolio/browser
+npx ng build --configuration offline   # same, without downloading Google Fonts
+```
+
+### Change the content
+
+All text lives in typed files under `src/app/content/`, so you rarely need to touch a component:
+
+| To change | Edit |
+| --- | --- |
+| Name, title, availability, profile links, SEO text | `profile.ts` |
+| Projects, store links, app icons, Featured work order (`featuredRank`) | `projects.ts` |
+| Articles in "Writing" | `articles.ts` |
+| Jobs, certifications | `experience.ts` |
+| How I build, AI tools, Stack, Toolbox | `skills.ts` |
+| Menu items | `navigation.ts` |
+
+Images and files served as-is (photo, logos, share image, `robots.txt`, `404.html`) are in `public/`.
+
+### How the code is organised
+
+```
+src/
+  index.html            page shell + inline loading-screen script
+  styles.scss           global tokens, base styles, shared building blocks
+  styles/               _tokens, _base, _shared, _breakpoints
+  app/
+    app.ts              shell: sidebar, main panel, player bar, bottom nav
+    content/            the site's content (see above)
+    core/
+      models/           TypeScript types for the content
+      services/         SeoMeta (title, share tags, schema.org), ScrollSpy
+      utils/            project helpers (isLive, featured)
+    layout/             sidebar, top bar, player bar, bottom nav, footer, loading screen
+    shared/ui/          icon + sprite, project art tile, store links, status pill, stack icon
+    features/home/      the page and one component per section
+```
+
+Standalone components, signals, `OnPush` change detection, no zone.js. The page is prerendered at build time, so visitors and search engines get full HTML before any JavaScript runs.

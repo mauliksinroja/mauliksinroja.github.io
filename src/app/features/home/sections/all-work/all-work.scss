@@ -1,0 +1,123 @@
+@use 'breakpoints' as bp;
+
+.chips {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  margin: 0 -16px;
+  padding: 2px 16px;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  @include bp.from(bp.$tablet) {
+    margin: 0;
+    padding: 2px;
+    flex-wrap: wrap;
+  }
+}
+
+.chip {
+  flex-shrink: 0;
+  border: 0;
+  cursor: pointer;
+  min-height: 36px;
+  padding: 8px 16px;
+  border-radius: var(--radius-full);
+  background: var(--bg-chip);
+  font-size: 14px;
+  font-weight: 700;
+
+  &:hover {
+    background: #333;
+  }
+
+  &[aria-pressed='true'] {
+    background: var(--accent);
+    color: var(--on-accent);
+  }
+}
+
+.grid {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  @include bp.from(bp.$tablet-sm) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  @include bp.from(bp.$desktop) {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  @include bp.from(bp.$desktop-lg) {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+}
+
+.card {
+  padding: 10px;
+  border-radius: var(--radius-lg);
+  background: var(--bg-interactive);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 10px;
+  transition: background 0.15s ease;
+
+  &:hover {
+    background: var(--bg-card);
+  }
+
+  h3 {
+    font-size: 15px;
+    font-weight: 700;
+  }
+
+  p {
+    flex-grow: 1;
+    font-size: 13px;
+    line-height: 1.35;
+    color: var(--text-subdued);
+  }
+
+  @include bp.from(bp.$tablet) {
+    padding: 12px;
+    gap: 12px;
+
+    h3 {
+      font-size: 16px;
+    }
+
+    p {
+      font-size: 14px;
+      line-height: 1.4;
+    }
+  }
+}
+
+.foot {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  padding-top: 2px;
+}
+
+.live,
+.off {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.off {
+  color: var(--text-subdued);
+  font-weight: 400;
+}

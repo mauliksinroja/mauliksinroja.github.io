@@ -1,0 +1,27 @@
+<h2 id="featured-h">Featured work</h2>
+
+<div class="head" aria-hidden="true">
+  <span>#</span><span>Project</span><span>Industry</span><span>Get the app</span>
+</div>
+
+<ol>
+  @for (project of projects; track project.id; let i = $index) {
+    <li class="track">
+      <span class="n">{{ i + 1 }}</span>
+      <span class="title">
+        <app-project-art size="sm" [project]="project" />
+        <span>
+          <strong>{{ project.name }}</strong>
+          <span class="sub">{{ project.stack }} · {{ project.summary }}</span>
+        </span>
+      </span>
+      <span class="col">{{ project.industry }}</span>
+      <app-store-links class="col stores" [project]="project" />
+    </li>
+  }
+</ol>
+
+<p class="store-note">
+  Apps published under my own developer account are on
+  <a [href]="playStoreUrl" rel="noopener" target="_blank">Google Play</a>.
+</p>

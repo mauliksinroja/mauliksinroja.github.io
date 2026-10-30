@@ -1,0 +1,19 @@
+@if (size() === 'lg') {
+  <span class="overline">{{ project().stack }}</span>
+}
+@if (project().icon && !iconFailed()) {
+  <img
+    #icon
+    class="icon"
+    [src]="project().icon"
+    alt=""
+    width="256"
+    height="256"
+    loading="lazy"
+    decoding="async"
+    referrerpolicy="no-referrer"
+    (error)="iconFailed.set(true)"
+  />
+} @else {
+  <b>{{ project().monogram }}</b>
+}

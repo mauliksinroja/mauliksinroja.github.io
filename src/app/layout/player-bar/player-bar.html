@@ -1,0 +1,21 @@
+<div class="left">
+  <span class="art" aria-hidden="true">{{ profile.initials }}</span>
+  <span class="text">
+    <span class="overline">Now building</span>
+    <strong class="mobile-status">{{ profile.availability.label }}</strong>
+    <span class="subtitle">Client work · international</span>
+  </span>
+</div>
+
+<div class="center">
+  <strong
+    ><span class="dot" [class.is-open]="profile.availability.state === 'open'"></span
+    >{{ profile.availability.label }}</strong
+  >
+  <span>{{ profile.availability.line }}</span>
+</div>
+
+<div class="cta-desktop"><a class="btn-outline" href="#contact">Get in touch</a></div>
+<a class="cta-mobile" href="#contact" aria-label="Get in touch"
+  ><app-icon name="mail" [size]="20"
+/></a>

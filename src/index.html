@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Maulik Sinroja — Senior Flutter &amp; Kotlin Developer</title>
+    <base href="/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;700;800&amp;display=swap"
+    />
+    <link rel="preload" as="image" href="assets/maulik-sinroja.jpg" />
+    <script>
+      /* Loading screen: decided before first paint. First visit per session only, never with reduced motion. */
+      (function () {
+        try {
+          var seen = sessionStorage.getItem('ms-loader-seen');
+          var still =
+            window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+          if (!seen && !still) {
+            document.documentElement.classList.add('show-loader');
+            window.__loaderStart = window.performance && performance.now ? performance.now() : 0;
+            sessionStorage.setItem('ms-loader-seen', '1');
+          }
+        } catch (e) {
+          /* storage blocked: skip the loader */
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <app-root></app-root>
+  </body>
+</html>

@@ -1,0 +1,35 @@
+<nav class="panel side-nav" aria-label="Primary">
+  <a class="brand" href="#top"
+    ><span class="monogram" aria-hidden="true">{{ profile.initials }}</span
+    >{{ profile.name }}</a
+  >
+  @for (item of nav; track item.id) {
+    <a
+      class="nav-link"
+      [href]="'#' + item.id"
+      [attr.aria-current]="active() === item.id ? 'true' : null"
+    >
+      <app-icon [name]="item.icon" />{{ item.label }}
+    </a>
+  }
+</nav>
+
+<section class="panel toolbox" aria-labelledby="toolbox-h">
+  <div class="toolbox-head">
+    <h2 id="toolbox-h">Toolbox</h2>
+    <span>Most used</span>
+  </div>
+  <ul>
+    @for (tool of toolbox; track tool.name) {
+      <li class="tool">
+        <span class="tool-art" [style.--art]="tool.color" aria-hidden="true">{{
+          tool.monogram
+        }}</span>
+        <span>
+          <span class="tool-name">{{ tool.name }}</span>
+          <span class="tool-meta">{{ tool.meta }}</span>
+        </span>
+      </li>
+    }
+  </ul>
+</section>

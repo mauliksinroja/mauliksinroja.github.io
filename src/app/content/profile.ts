@@ -1,0 +1,82 @@
+import { Profile } from '../core/models';
+
+export const PROFILE: Profile = {
+  name: 'Maulik Sinroja',
+  initials: 'MS',
+  title: 'Senior Flutter & Kotlin Developer',
+  lede: 'I build Android and iOS apps that still hold up long after launch — for founders and product teams in India, the US, the UK and Australia.',
+  location: 'Ahmedabad, India',
+  facts: ['10+ years in mobile', '10+ production apps', '7 industries'],
+  email: 'maulik.sinroja@gmail.com',
+  photo: 'assets/maulik-sinroja.jpg',
+  siteUrl: 'https://mauliksinroja.github.io/',
+  availability: {
+    state: 'engaged',
+    label: 'Currently engaged',
+    line: 'Booked with international clients — happy to talk about upcoming projects.',
+  },
+  linkedIn: {
+    label: 'LinkedIn',
+    url: 'https://www.linkedin.com/in/mauliksinroja',
+    icon: 'linkedin',
+    iconSize: 16,
+    isOwnProfile: true,
+  },
+  socials: [
+    {
+      label: 'My apps on Google Play',
+      url: 'https://play.google.com/store/apps/developer?id=Developers+Guru',
+      icon: 'play',
+      iconSize: 20,
+      isOwnProfile: false,
+    },
+    {
+      label: 'GitHub',
+      url: 'https://github.com/mauliksinroja',
+      icon: 'github',
+      iconSize: 22,
+      isOwnProfile: true,
+    },
+    {
+      label: 'Stack Overflow',
+      url: 'https://stackoverflow.com/users/8597548/maulik-sinroja',
+      icon: 'stackoverflow',
+      iconSize: 18,
+      isOwnProfile: true,
+    },
+    {
+      label: 'Email',
+      url: 'mailto:maulik.sinroja@gmail.com',
+      icon: 'mail',
+      iconSize: 22,
+      isOwnProfile: false,
+    },
+  ],
+  playStoreDeveloperUrl: 'https://play.google.com/store/apps/developer?id=Developers+Guru',
+  upworkUrl: 'https://www.upwork.com/o/profiles/users/~01856b292e5ee8ba65/',
+  linkedInArticlesUrl: 'https://www.linkedin.com/in/mauliksinroja/recent-activity/articles/',
+  languages: ['English', 'Hindi', 'Gujarati'],
+  seo: {
+    title: 'Maulik Sinroja — Senior Flutter & Kotlin Developer',
+    description:
+      'Maulik Sinroja is a senior Flutter and Kotlin developer in Ahmedabad, India, with 10+ years building Android and iOS apps for clients in India, the US, the UK and Australia.',
+    shareDescription:
+      '10+ years building Android and iOS apps that hold up long after launch. Flutter, Kotlin, BLoC, Firebase.',
+    shareImage: 'og-image.png',
+    twitterHandle: '@mauliksinroja',
+    knowsAbout: [
+      'Flutter',
+      'Dart',
+      'Kotlin',
+      'Android',
+      'iOS',
+      'BLoC',
+      'Firebase',
+      'GraphQL',
+      'Mobile app development',
+    ],
+    alumniOf: 'Marwadi Education Foundation',
+    region: 'Gujarat',
+    countryCode: 'IN',
+  },
+};

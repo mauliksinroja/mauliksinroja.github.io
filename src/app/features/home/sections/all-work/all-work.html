@@ -1,0 +1,35 @@
+<div class="section-head">
+  <h2 id="all-h">All work</h2>
+  <span class="count" aria-live="polite">{{ countLabel() }}</span>
+</div>
+
+<div class="chips" role="group" aria-label="Filter by technology">
+  @for (filter of filters; track filter.id) {
+    <button
+      class="chip"
+      type="button"
+      [attr.aria-pressed]="selected() === filter.id"
+      (click)="selected.set(filter.id)"
+    >
+      {{ filter.label }} · {{ filter.count }}
+    </button>
+  }
+</div>
+
+<ul class="grid">
+  @for (project of visible(); track project.id) {
+    <li class="card">
+      <app-project-art size="lg" [project]="project" />
+      <h3>{{ project.name }}</h3>
+      <p>{{ project.summary }}</p>
+      <div class="foot">
+        @if (isLive(project)) {
+          <span class="live"><span class="dot is-open"></span>Live</span>
+          <app-store-links [project]="project" />
+        } @else {
+          <span class="off">Not on stores</span>
+        }
+      </div>
+    </li>
+  }
+</ul>

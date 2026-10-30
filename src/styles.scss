@@ -1,0 +1,5 @@
+// Global styles: design tokens, element defaults and shared building blocks.
+// Everything else lives in the component that owns it.
+@use 'styles/tokens';
+@use 'styles/base';
+@use 'styles/shared';

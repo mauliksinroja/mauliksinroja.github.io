@@ -1,0 +1,21 @@
+<div class="mobile">
+  <a class="monogram" href="#top" [attr.aria-label]="profile.name + ', home'">{{
+    profile.initials
+  }}</a>
+  <app-status-pill [availability]="profile.availability" />
+</div>
+
+<div class="desktop">
+  <nav aria-label="Sections">
+    @for (tab of tabs; track tab.id) {
+      <a
+        class="tab"
+        [href]="'#' + tab.id"
+        [class.is-active]="active() === tab.id"
+        [attr.aria-current]="active() === tab.id ? 'true' : null"
+        >{{ tab.label }}</a
+      >
+    }
+  </nav>
+  <app-status-pill [availability]="profile.availability" />
+</div>
