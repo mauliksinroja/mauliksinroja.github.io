@@ -1,0 +1,30 @@
+<h2 id="approach-h">How I build</h2>
+
+<div class="principles">
+  @for (principle of principles; track principle.step) {
+    <article>
+      <span class="overline">{{ principle.step }}</span>
+      <h3>{{ principle.title }}</h3>
+      <p>{{ principle.body }}</p>
+    </article>
+  }
+</div>
+
+<div class="ai-strip">
+  <h3 class="overline">AI in my daily workflow</h3>
+  <ul class="ai-tools">
+    @for (tool of aiTools; track tool.name) {
+      <li class="ai-tool">
+        <span class="ai-icon"><app-stack-icon [icon]="tool.icon" [size]="28" /></span>
+        <span>
+          <strong>{{ tool.name }}</strong>
+          <span class="vendor">{{ tool.vendor }}</span>
+        </span>
+      </li>
+    }
+  </ul>
+  <p>
+    Used for architecture review, code quality checks and boilerplate. Every line is reviewed by me
+    before it ships.
+  </p>
+</div>

@@ -1,0 +1,18 @@
+// Breakpoints shared by every component stylesheet.
+$tablet-sm: 576px;
+$tablet: 768px;
+$desktop-sm: 896px;
+$desktop: 1024px;
+$desktop-lg: 1280px;
+
+@mixin from($min) {
+  @media (min-width: $min) {
+    @content;
+  }
+}
+
+@mixin below($max) {
+  @media (max-width: ($max - 1px)) {
+    @content;
+  }
+}

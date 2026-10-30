@@ -1,0 +1,36 @@
+// Nocturne design tokens.
+:root {
+  --bg-base: #121212;
+  --bg-surface: #181818;
+  --bg-interactive: #1f1f1f;
+  --bg-card: #252525;
+  --bg-card-alt: #272727;
+  --bg-chip: #2a2a2a;
+  --text-base: #ffffff;
+  --text-bright-subdued: #cbcbcb;
+  --text-subdued: #b3b3b3;
+  --accent: #1ed760;
+  --on-accent: #000000;
+  --text-warning: #ffa42b;
+  --text-announcement: #539df5;
+  --border-strong: #7c7c7c;
+  --hairline: #2a2a2a;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-pill: 500px;
+  --radius-full: 9999px;
+  --shadow-card: rgba(0, 0, 0, 0.3) 0 8px 8px;
+  --shadow-dialog: rgba(0, 0, 0, 0.5) 0 8px 24px;
+  --focus-ring: 0 0 0 2px #121212, 0 0 0 4px #ffffff;
+  --font-sans: Figtree, 'Helvetica Neue', Helvetica, Arial, 'Hiragino Sans', Meiryo, sans-serif;
+  --sidebar-w: 300px;
+  --player-h: 80px;
+  color-scheme: dark;
+}
+
+@media (min-width: 896px) and (max-width: 1023px) {
+  :root {
+    --sidebar-w: 240px;
+  }
+}

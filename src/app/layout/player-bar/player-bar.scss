@@ -1,0 +1,154 @@
+@use 'breakpoints' as bp;
+
+// Phones: floating card above the bottom navigation.
+:host {
+  position: fixed;
+  left: 8px;
+  right: 8px;
+  bottom: 72px;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px;
+  border-radius: var(--radius-lg);
+  background: #1f3b63;
+  box-shadow: var(--shadow-dialog);
+}
+
+.left {
+  display: contents;
+}
+
+.art {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-sm);
+  background: var(--bg-base);
+  display: grid;
+  place-items: center;
+  font-size: 13px;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+.text {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+
+  strong {
+    font-size: 13px;
+  }
+
+  .overline {
+    display: none;
+  }
+
+  .subtitle {
+    font-size: 12px;
+    color: var(--text-bright-subdued);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+.center,
+.cta-desktop {
+  display: none;
+}
+
+.cta-mobile {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--text-base);
+  color: #000;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+
+// Desktop: full-width bar along the bottom of the window.
+@include bp.from(bp.$desktop-sm) {
+  :host {
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: var(--player-h);
+    border-radius: 0;
+    box-shadow: none;
+    background: var(--bg-base);
+    padding: 0 24px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr) minmax(0, 1fr);
+    gap: 16px;
+  }
+
+  .left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .art {
+    width: 56px;
+    height: 56px;
+    font-size: 16px;
+    background: #1f3b63;
+  }
+
+  .text {
+    .mobile-status {
+      display: none;
+    }
+
+    .overline {
+      display: block;
+      font-size: 12px;
+      color: var(--text-subdued);
+    }
+
+    .subtitle {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text-base);
+    }
+  }
+
+  .center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    text-align: center;
+
+    strong {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+    }
+
+    span {
+      font-size: 12px;
+      color: var(--text-subdued);
+    }
+  }
+
+  .cta-desktop {
+    display: flex;
+    justify-content: flex-end;
+
+    a {
+      padding: 10px 20px;
+    }
+  }
+
+  .cta-mobile {
+    display: none;
+  }
+}

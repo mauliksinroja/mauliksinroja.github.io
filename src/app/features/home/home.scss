@@ -1,0 +1,22 @@
+@use 'breakpoints' as bp;
+
+:host {
+  display: block;
+}
+
+// Experience and Stack sit side by side on wide screens.
+.split {
+  display: grid;
+  grid-template-columns: 1fr;
+
+  @include bp.from(bp.$desktop) {
+    grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+    gap: 32px;
+    padding: 0 32px;
+
+    > .section {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+}

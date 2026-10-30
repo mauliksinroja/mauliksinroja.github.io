@@ -1,0 +1,59 @@
+@use 'breakpoints' as bp;
+
+:host {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px 16px 8px;
+
+  @include bp.from(bp.$tablet) {
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+    padding: 24px 32px 8px;
+  }
+}
+
+.row {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+
+  // Five buttons on small phones
+  @include bp.below(bp.$tablet-sm) {
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    .icon-btn {
+      width: 44px;
+      height: 44px;
+    }
+
+    .btn-outline {
+      padding: 13px 16px;
+      letter-spacing: 1px;
+      min-width: 0;
+    }
+  }
+}
+
+.btn-outline {
+  flex: 1;
+
+  @include bp.from(bp.$tablet) {
+    flex: none;
+  }
+}
+
+.status-line {
+  font-size: 14px;
+  color: var(--text-subdued);
+  text-align: center;
+
+  @include bp.from(bp.$tablet) {
+    margin-left: auto;
+    max-width: 320px;
+    text-align: right;
+  }
+}

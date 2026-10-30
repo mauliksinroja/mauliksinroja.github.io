@@ -1,0 +1,34 @@
+<div class="avatar">
+  <img
+    [src]="profile.photo"
+    width="480"
+    height="480"
+    [alt]="'Portrait of ' + profile.name"
+    fetchpriority="high"
+  />
+</div>
+
+<div class="copy">
+  <p class="verified">
+    <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true">
+      <circle cx="12" cy="12" r="11" fill="#539df5" />
+      <path
+        d="m7 12.5 3.2 3.2L17 9"
+        fill="none"
+        stroke="#fff"
+        stroke-width="2.2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </svg>
+    {{ profile.title }}
+  </p>
+  <h1>{{ profile.name }}</h1>
+  <p class="lede">{{ profile.lede }}</p>
+  <p class="meta">
+    <strong>{{ profile.location }}</strong>
+    @for (fact of profile.facts; track fact) {
+      <span aria-hidden="true">·</span><span>{{ fact }}</span>
+    }
+  </p>
+</div>

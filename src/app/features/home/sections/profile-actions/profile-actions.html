@@ -1,0 +1,24 @@
+<a class="btn-primary" [href]="enquiryHref">Start a conversation</a>
+
+<div class="row">
+  <a class="btn-outline" [href]="profile.linkedIn.url" rel="me noopener" target="_blank">
+    <app-icon [name]="profile.linkedIn.icon" [size]="profile.linkedIn.iconSize" />{{
+      profile.linkedIn.label
+    }}
+  </a>
+  @for (link of profile.socials; track link.url) {
+    <a
+      class="icon-btn"
+      [href]="link.url"
+      [attr.aria-label]="link.label"
+      [attr.rel]="
+        link.url.startsWith('mailto:') ? null : link.isOwnProfile ? 'me noopener' : 'noopener'
+      "
+      [attr.target]="link.url.startsWith('mailto:') ? null : '_blank'"
+    >
+      <app-icon [name]="link.icon" [size]="link.iconSize" />
+    </a>
+  }
+</div>
+
+<p class="status-line">{{ profile.availability.line }}</p>

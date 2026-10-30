@@ -1,0 +1,40 @@
+<div
+  class="art"
+  aria-hidden="true"
+  [style.--art]="article().color"
+  [class.has-cover]="coverLoaded()"
+>
+  <span class="overline">{{ article().source }} · Article</span>
+  <app-icon name="pen" [size]="28" />
+  <strong>{{ article().audience }}</strong>
+  @if (article().image && !coverFailed()) {
+    <img
+      #cover
+      class="cover"
+      [src]="article().image"
+      alt=""
+      width="1280"
+      height="720"
+      loading="lazy"
+      decoding="async"
+      referrerpolicy="no-referrer"
+      (load)="coverLoaded.set(true)"
+      (error)="coverFailed.set(true)"
+    />
+  }
+</div>
+
+<div class="body">
+  <span class="overline">{{ article().audience }}</span>
+  <h3>{{ article().title }}</h3>
+  <p>{{ article().summary }}</p>
+  <a
+    class="store"
+    [href]="article().url"
+    target="_blank"
+    rel="noopener"
+    [attr.aria-label]="'Read “' + article().title + '” on ' + article().source"
+  >
+    <app-icon name="external" [size]="12" />Read on {{ article().source }}
+  </a>
+</div>

@@ -1,0 +1,115 @@
+@use 'breakpoints' as bp;
+
+:host {
+  display: none;
+
+  @include bp.from(bp.$desktop-sm) {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    position: sticky;
+    top: 8px;
+    height: calc(100vh - var(--player-h) - 16px);
+  }
+}
+
+.panel {
+  background: var(--bg-surface);
+  border-radius: var(--radius-lg);
+}
+
+.side-nav {
+  padding: 20px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 4px 12px 16px;
+  font-weight: 700;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 10px 12px;
+  font-size: 14px;
+  color: var(--text-subdued);
+  border-radius: var(--radius-md);
+
+  &:hover,
+  &[aria-current='true'] {
+    color: var(--text-base);
+  }
+
+  &[aria-current='true'] {
+    font-weight: 700;
+  }
+}
+
+.toolbox {
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+  padding: 16px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.toolbox-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px 12px;
+  color: var(--text-subdued);
+
+  h2 {
+    font-size: 16px;
+    font-weight: 700;
+  }
+
+  span {
+    font-size: 12px;
+  }
+}
+
+.tool {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 12px;
+  border-radius: var(--radius-md);
+
+  &:hover {
+    background: var(--bg-card);
+  }
+}
+
+.tool-art {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-sm);
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  font-size: 15px;
+  font-weight: 800;
+  background: var(--art, var(--bg-card-alt));
+}
+
+.tool-name {
+  display: block;
+  font-size: 16px;
+}
+
+.tool-meta {
+  display: block;
+  font-size: 14px;
+  color: var(--text-subdued);
+}

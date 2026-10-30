@@ -1,0 +1,85 @@
+@use 'breakpoints' as bp;
+
+.head,
+.track {
+  display: grid;
+  align-items: center;
+  gap: 12px;
+  grid-template-columns: 20px minmax(0, 1fr);
+
+  @include bp.from(bp.$tablet) {
+    grid-template-columns: 40px minmax(0, 1fr) 200px 180px;
+    gap: 16px;
+    padding: 8px 16px;
+  }
+
+  @include bp.from(bp.$desktop-lg) {
+    grid-template-columns: 40px minmax(0, 1fr) 240px 200px;
+  }
+}
+
+.head {
+  display: none;
+
+  @include bp.from(bp.$tablet) {
+    display: grid;
+    font-size: 14px;
+    color: var(--text-subdued);
+    box-shadow: inset 0 -1px 0 var(--hairline);
+    margin-bottom: -4px;
+  }
+}
+
+.track {
+  padding: 6px 0;
+  border-radius: var(--radius-md);
+
+  @include bp.from(bp.$tablet) {
+    padding: 8px 16px;
+
+    &:hover {
+      background: var(--bg-card);
+    }
+  }
+}
+
+.n {
+  font-size: 14px;
+  color: var(--text-subdued);
+
+  @include bp.from(bp.$tablet) {
+    font-size: 16px;
+  }
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+
+  strong {
+    display: block;
+    font-size: 16px;
+  }
+
+  .sub {
+    display: block;
+    font-size: 14px;
+    color: var(--text-subdued);
+  }
+}
+
+.col {
+  display: none;
+  font-size: 14px;
+  color: var(--text-subdued);
+
+  @include bp.from(bp.$tablet) {
+    display: block;
+
+    &.stores {
+      display: flex;
+    }
+  }
+}

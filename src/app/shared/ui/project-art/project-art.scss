@@ -1,0 +1,70 @@
+@use 'breakpoints' as bp;
+
+:host {
+  background: var(--art, var(--bg-card-alt));
+}
+
+// Large tile on "All work" cards
+:host(.lg) {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 12px;
+
+  .overline {
+    color: rgba(255, 255, 255, 0.82);
+    font-size: 10.5px;
+  }
+
+  b {
+    font-size: 36px;
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -1px;
+  }
+
+  .icon {
+    width: 46%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    border-radius: 22%;
+    box-shadow: var(--shadow-dialog);
+    background: var(--bg-card-alt);
+    object-fit: cover;
+  }
+
+  @include bp.from(bp.$tablet) {
+    padding: 14px;
+
+    .overline {
+      font-size: 12px;
+    }
+
+    b {
+      font-size: 44px;
+    }
+  }
+}
+
+// Small 48px tile in "Featured work"
+:host(.sm) {
+  width: 48px;
+  height: 48px;
+  border-radius: 22%;
+  overflow: hidden;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  font-size: 15px;
+  font-weight: 800;
+
+  .icon {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}

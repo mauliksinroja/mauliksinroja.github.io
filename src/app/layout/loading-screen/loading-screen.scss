@@ -1,0 +1,143 @@
+:host {
+  display: none;
+}
+
+// `show-loader` is added to <html> by the inline script in index.html.
+:host-context(html.show-loader) {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: grid;
+  place-items: center;
+  background: var(--bg-base);
+  // Safety net: fades out on its own even if JavaScript never runs.
+  animation: loader-out 0.3s ease 1.2s forwards;
+}
+
+:host-context(html.show-loader.loader-done) {
+  animation: loader-out-early 0.3s ease forwards;
+}
+
+@keyframes loader-out {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@keyframes loader-out-early {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 22px;
+}
+
+.photo {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: var(--bg-card-alt);
+  box-shadow:
+    0 0 0 3px var(--bg-base),
+    0 0 0 5px var(--accent),
+    var(--shadow-dialog);
+  animation: loader-pop 0.45s cubic-bezier(0.2, 0.9, 0.3, 1.3) both;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+@keyframes loader-pop {
+  from {
+    transform: scale(0.6);
+    opacity: 0;
+  }
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+
+.eq {
+  display: flex;
+  align-items: flex-end;
+  gap: 5px;
+  height: 30px;
+
+  span {
+    display: block;
+    width: 5px;
+    height: 12px;
+    border-radius: 3px;
+    background: var(--accent);
+    animation: loader-eq 0.52s ease-in-out infinite alternate;
+
+    &:nth-child(2) {
+      animation-delay: -0.18s;
+    }
+    &:nth-child(3) {
+      animation-delay: -0.36s;
+    }
+    &:nth-child(4) {
+      animation-delay: -0.1s;
+    }
+    &:nth-child(5) {
+      animation-delay: -0.27s;
+    }
+  }
+}
+
+@keyframes loader-eq {
+  from {
+    height: 6px;
+  }
+  to {
+    height: 30px;
+  }
+}
+
+.name {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  animation: loader-rise 0.4s ease-out 0.25s both;
+
+  strong {
+    font-size: 16px;
+    font-weight: 700;
+  }
+
+  span {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    color: var(--text-subdued);
+  }
+}
+
+@keyframes loader-rise {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
