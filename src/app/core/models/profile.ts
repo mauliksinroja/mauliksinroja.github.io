@@ -17,6 +17,8 @@ export interface SocialLink {
   iconSize: number;
   /** `rel="me"` marks profiles that belong to the site owner. */
   isOwnProfile: boolean;
+  /** Brand colour shown on hover; omit when the brand colour is too dark for the dark theme. */
+  brandColor?: string;
 }
 
 export interface Profile {

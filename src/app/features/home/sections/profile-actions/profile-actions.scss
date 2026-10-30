@@ -57,3 +57,13 @@
     text-align: right;
   }
 }
+
+// Profile icons are grey like the rest of the page and take their brand
+// colour on hover (white for brands too dark for the dark theme).
+.icon-btn:hover {
+  color: var(--brand, var(--text-base));
+}
+
+.btn-outline:hover app-icon {
+  color: var(--brand, currentColor);
+}
