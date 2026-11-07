@@ -9,7 +9,7 @@
       class="chip"
       type="button"
       [attr.aria-pressed]="selected() === filter.id"
-      (click)="selected.set(filter.id)"
+      (click)="select(filter.id)"
     >
       {{ filter.label }} · {{ filter.count }}
     </button>
@@ -17,9 +17,28 @@
 </div>
 
 <ul class="grid">
-  @for (project of visible(); track project.id) {
-    <li class="card">
-      <app-project-art size="lg" [project]="project" />
+  @for (project of visible(); track project.id; let i = $index) {
+    <li
+      class="card"
+      appSpotlight
+      [appReveal]="i"
+      [style.view-transition-name]="'card-' + project.id"
+    >
+      <div class="art-wrap">
+        <app-project-art size="lg" [project]="project" />
+        @if (storeUrl(project); as url) {
+          <a
+            class="open"
+            [href]="url"
+            target="_blank"
+            rel="noopener"
+            tabindex="-1"
+            aria-hidden="true"
+          >
+            <app-icon name="external" [size]="20" />
+          </a>
+        }
+      </div>
       <h3>{{ project.name }}</h3>
       <p>{{ project.summary }}</p>
       <div class="foot">

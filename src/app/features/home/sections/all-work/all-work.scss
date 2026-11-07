@@ -121,3 +121,68 @@
   color: var(--text-subdued);
   font-weight: 400;
 }
+
+// ---------- Motion ----------
+.art-wrap {
+  position: relative;
+}
+
+app-project-art {
+  transition:
+    transform var(--dur-base) var(--ease-out),
+    box-shadow var(--dur-base) linear;
+}
+
+// Round "open" button that rises out of the tile on hover, like a play button.
+// A mouse shortcut only: the Android / iOS links below are the accessible ones.
+.open {
+  display: none;
+}
+
+@media (hover: hover) {
+  .open {
+    position: absolute;
+    right: 8px;
+    bottom: 8px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: var(--accent);
+    color: var(--on-accent);
+    box-shadow: var(--shadow-dialog);
+    opacity: 0;
+    transform: translateY(10px);
+    transition:
+      opacity var(--dur-base) linear,
+      transform var(--dur-base) var(--ease-spring);
+  }
+
+  .card:hover {
+    .open {
+      opacity: 1;
+      transform: none;
+    }
+
+    app-project-art {
+      box-shadow: 0 14px 28px rgba(0, 0, 0, 0.45);
+    }
+
+    .open:hover {
+      transform: scale(1.08);
+    }
+  }
+}
+
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .card {
+    transition:
+      background 0.15s ease,
+      transform var(--dur-base) var(--ease-out);
+
+    &:hover {
+      transform: translateY(-4px);
+    }
+  }
+}

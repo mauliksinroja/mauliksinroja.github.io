@@ -23,12 +23,19 @@
     </svg>
     {{ profile.title }}
   </p>
-  <h1>{{ profile.name }}</h1>
+  <h1>
+    @for (word of nameWords; track $index) {
+      <span class="word" [style.--w]="$index"
+        ><span>{{ word }}</span></span
+      >{{ ' ' }}
+    }
+  </h1>
   <p class="lede">{{ profile.lede }}</p>
   <p class="meta">
     <strong>{{ profile.location }}</strong>
-    @for (fact of profile.facts; track fact) {
-      <span aria-hidden="true">·</span><span>{{ fact }}</span>
+    @for (fact of profile.facts; track fact; let i = $index) {
+      <span aria-hidden="true" [style.--m]="i + 1">·</span
+      ><span [style.--m]="i + 1">{{ fact }}</span>
     }
   </p>
 </div>

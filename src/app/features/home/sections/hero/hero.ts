@@ -10,4 +10,5 @@ import { PROFILE } from '../../../../content';
 })
 export class Hero {
   protected readonly profile = PROFILE;
+  protected readonly nameWords = PROFILE.name.split(' ');
 }
