@@ -115,3 +115,22 @@
     height: 44px;
   }
 }
+
+// ---------- Motion ----------
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .principles article {
+    transition: transform var(--dur-base) var(--ease-out);
+
+    &:hover {
+      transform: translateY(-3px);
+    }
+  }
+
+  .ai-icon {
+    transition: transform var(--dur-slow) var(--ease-spring);
+  }
+
+  .ai-tool:hover .ai-icon {
+    transform: rotate(-12deg) scale(1.1);
+  }
+}

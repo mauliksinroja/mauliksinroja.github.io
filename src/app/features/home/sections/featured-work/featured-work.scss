@@ -83,3 +83,43 @@
     }
   }
 }
+
+// ---------- Motion: the hovered row "plays" ----------
+.n {
+  display: grid;
+
+  > * {
+    grid-area: 1 / 1;
+    align-self: center;
+  }
+}
+
+.eq-bars {
+  visibility: hidden;
+}
+
+app-project-art {
+  transition: transform var(--dur-base) var(--ease-spring);
+}
+
+@media (hover: hover) {
+  .track:hover {
+    .num {
+      visibility: hidden;
+    }
+
+    .eq-bars {
+      visibility: visible;
+    }
+
+    strong {
+      color: var(--accent);
+    }
+  }
+}
+
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .track:hover app-project-art {
+    transform: scale(1.08) rotate(-2deg);
+  }
+}

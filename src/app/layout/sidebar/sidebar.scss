@@ -34,6 +34,7 @@
 }
 
 .nav-link {
+  position: relative;
   display: flex;
   align-items: center;
   gap: 16px;
@@ -49,6 +50,32 @@
 
   &[aria-current='true'] {
     font-weight: 700;
+  }
+
+  // Green marker for the active section.
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 3px;
+    height: 20px;
+    margin-top: -10px;
+    border-radius: 2px;
+    background: var(--accent);
+    transform: scaleY(0);
+  }
+
+  &[aria-current='true']::before {
+    transform: none;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    transition: color var(--dur-fast) linear;
+
+    &::before {
+      transition: transform var(--dur-base) var(--ease-spring);
+    }
   }
 }
 

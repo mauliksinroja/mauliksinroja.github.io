@@ -99,3 +99,67 @@ h1 {
     justify-content: flex-start;
   }
 }
+
+// ---------- Intro motion ----------
+// Pure CSS, so it plays from the first paint and always ends visible.
+// `--intro-delay` holds it back while the first-visit loading screen shows.
+
+.word {
+  display: inline-block;
+  overflow: hidden;
+  // Room for descenders (the "j" in Sinroja) inside the clipping mask.
+  padding-bottom: 0.12em;
+  margin-bottom: -0.12em;
+  vertical-align: top;
+
+  > span {
+    display: inline-block;
+  }
+}
+
+@keyframes word-up {
+  from {
+    transform: translateY(108%);
+  }
+  to {
+    transform: none;
+  }
+}
+
+@keyframes ring-pulse {
+  from {
+    box-shadow:
+      var(--shadow-dialog),
+      0 0 0 0 rgba(30, 215, 96, 0.55);
+  }
+  to {
+    box-shadow:
+      var(--shadow-dialog),
+      0 0 0 26px rgba(30, 215, 96, 0);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .avatar {
+    animation:
+      motion-pop 0.6s var(--ease-spring) var(--intro-delay) both,
+      ring-pulse 1.3s var(--ease-out) calc(var(--intro-delay) + 420ms) both;
+  }
+
+  .verified {
+    animation: motion-rise 0.5s var(--ease-out) calc(var(--intro-delay) + 120ms) both;
+  }
+
+  .word > span {
+    animation: word-up 0.7s var(--ease-out) calc(var(--intro-delay) + 200ms + var(--w) * 90ms) both;
+  }
+
+  .lede {
+    animation: motion-rise 0.6s var(--ease-out) calc(var(--intro-delay) + 420ms) both;
+  }
+
+  .meta > * {
+    animation: motion-rise 0.5s var(--ease-out)
+      calc(var(--intro-delay) + 520ms + var(--m, 0) * 60ms) both;
+  }
+}

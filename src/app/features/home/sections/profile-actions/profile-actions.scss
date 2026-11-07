@@ -67,3 +67,19 @@
 .btn-outline:hover app-icon {
   color: var(--brand, currentColor);
 }
+
+// Intro: buttons follow the hero cascade.
+@media (prefers-reduced-motion: no-preference) {
+  .btn-primary {
+    animation: motion-rise 0.5s var(--ease-out) calc(var(--intro-delay) + 640ms) both;
+  }
+
+  .row > * {
+    animation: motion-pop 0.45s var(--ease-spring)
+      calc(var(--intro-delay) + 700ms + var(--b, 0) * 60ms) both;
+  }
+
+  .status-line {
+    animation: motion-fade 0.6s linear calc(var(--intro-delay) + 950ms) both;
+  }
+}

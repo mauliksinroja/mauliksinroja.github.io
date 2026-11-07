@@ -1,12 +1,14 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { ARTICLES, PROFILE } from '../../../../content';
+import { Reveal } from '../../../../shared/motion/reveal';
+import { Spotlight } from '../../../../shared/motion/spotlight';
 import { ArticleCard } from './article-card';
 
 /** "Writing": article cards from `content/articles.ts`. */
 @Component({
   selector: 'section[appWriting]',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [ArticleCard],
+  imports: [ArticleCard, Reveal, Spotlight],
   host: { 'aria-labelledby': 'writing-h' },
   styles: `
     @use 'breakpoints' as bp;
@@ -30,8 +32,8 @@ import { ArticleCard } from './article-card';
       >
     </div>
     <ul class="articles">
-      @for (article of articles; track article.url) {
-        <li appArticleCard [article]="article"></li>
+      @for (article of articles; track article.url; let i = $index) {
+        <li appArticleCard appSpotlight [appReveal]="i" [article]="article"></li>
       }
     </ul>
   `,

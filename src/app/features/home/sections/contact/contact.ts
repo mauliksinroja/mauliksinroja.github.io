@@ -1,9 +1,11 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { PROFILE } from '../../../../content';
+import { Reveal } from '../../../../shared/motion/reveal';
 
 @Component({
   selector: 'section[appContact]',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [Reveal],
   host: { 'aria-labelledby': 'contact-h' },
   styles: `
     @use 'breakpoints' as bp;
@@ -74,14 +76,14 @@ import { PROFILE } from '../../../../content';
     }
   `,
   template: `
-    <div class="copy">
+    <div class="copy" appReveal>
       <h2 id="contact-h">Have a mobile product on the roadmap?</h2>
       <p>
         Tell me what you are building and your timeline — a first version, or an app already in the
         stores that needs a steady hand.
       </p>
     </div>
-    <div class="cta">
+    <div class="cta" [appReveal]="1">
       <a class="btn-primary" [href]="enquiryHref">Start a conversation</a>
       <span>{{ email }}</span>
     </div>

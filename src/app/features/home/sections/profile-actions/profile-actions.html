@@ -12,7 +12,7 @@
       profile.linkedIn.label
     }}
   </a>
-  @for (link of profile.socials; track link.url) {
+  @for (link of profile.socials; track link.url; let i = $index) {
     <a
       class="icon-btn"
       [href]="link.url"
@@ -22,6 +22,7 @@
       "
       [attr.target]="link.url.startsWith('mailto:') ? null : '_blank'"
       [style.--brand]="link.brandColor"
+      [style.--b]="i + 1"
     >
       <app-icon [name]="link.icon" [size]="link.iconSize" />
     </a>

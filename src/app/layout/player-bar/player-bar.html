@@ -1,8 +1,13 @@
 <div class="left">
   <span class="art" aria-hidden="true">{{ profile.initials }}</span>
   <span class="text">
-    <span class="overline">Now building</span>
-    <strong class="mobile-status">{{ profile.availability.label }}</strong>
+    <span class="overline">
+      <span class="eq-bars" aria-hidden="true"><i></i><i></i><i></i></span>Now building
+    </span>
+    <strong class="mobile-status">
+      <span class="eq-bars" aria-hidden="true"><i></i><i></i><i></i></span
+      >{{ profile.availability.label }}
+    </strong>
     <span class="subtitle">Client work · international</span>
   </span>
 </div>
@@ -12,10 +17,17 @@
     ><span class="dot" [class.is-open]="profile.availability.state === 'open'"></span
     >{{ profile.availability.label }}</strong
   >
-  <span>{{ profile.availability.line }}</span>
+  <span class="line">{{ profile.availability.line }}</span>
+  <div class="progress" aria-hidden="true">
+    <span class="time">{{ elapsed() }}</span>
+    <span class="track"><span class="fill"></span></span>
+    <span class="time">{{ total() }}</span>
+  </div>
 </div>
 
 <div class="cta-desktop"><a class="btn-outline" href="#contact">Get in touch</a></div>
 <a class="cta-mobile" href="#contact" aria-label="Get in touch"
   ><app-icon name="mail" [size]="20"
 /></a>
+
+<span class="mini-progress" aria-hidden="true"><span class="fill"></span></span>

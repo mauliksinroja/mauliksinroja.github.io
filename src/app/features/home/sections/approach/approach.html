@@ -1,8 +1,8 @@
 <h2 id="approach-h">How I build</h2>
 
 <div class="principles">
-  @for (principle of principles; track principle.step) {
-    <article>
+  @for (principle of principles; track principle.step; let i = $index) {
+    <article appSpotlight [appReveal]="i">
       <span class="overline">{{ principle.step }}</span>
       <h3>{{ principle.title }}</h3>
       <p>{{ principle.body }}</p>
@@ -10,11 +10,11 @@
   }
 </div>
 
-<div class="ai-strip">
+<div class="ai-strip" appReveal>
   <h3 class="overline">AI in my daily workflow</h3>
   <ul class="ai-tools">
-    @for (tool of aiTools; track tool.name) {
-      <li class="ai-tool">
+    @for (tool of aiTools; track tool.name; let i = $index) {
+      <li class="ai-tool" [appReveal]="i + 1">
         <span class="ai-icon"><app-stack-icon [icon]="tool.icon" [size]="28" /></span>
         <span>
           <strong>{{ tool.name }}</strong>

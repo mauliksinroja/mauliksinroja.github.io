@@ -6,8 +6,11 @@
 
 <ol>
   @for (project of projects; track project.id; let i = $index) {
-    <li class="track">
-      <span class="n">{{ i + 1 }}</span>
+    <li class="track" [appReveal]="i">
+      <span class="n">
+        <span class="num">{{ i + 1 }}</span>
+        <span class="eq-bars" aria-hidden="true"><i></i><i></i><i></i></span>
+      </span>
       <span class="title">
         <app-project-art size="sm" [project]="project" />
         <span>

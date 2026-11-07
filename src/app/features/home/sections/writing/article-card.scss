@@ -107,3 +107,16 @@ p {
 .store {
   align-self: flex-start;
 }
+
+// ---------- Motion: cover zooms gently on hover ----------
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .cover {
+    transition:
+      opacity 0.2s ease,
+      transform var(--dur-slow) var(--ease-out);
+  }
+
+  :host(:hover) .cover {
+    transform: scale(1.05);
+  }
+}
